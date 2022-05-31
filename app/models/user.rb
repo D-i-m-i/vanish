@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :vans
+
+  validates :name, presence: true
+  validates :bio, length: { maximum: 500 }
 end
