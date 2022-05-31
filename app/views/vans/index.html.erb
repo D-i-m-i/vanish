@@ -1,0 +1,7 @@
+<h1>This is the Vans index page</h1>
+
+<ol>
+	<% @vans.each do |van| %>
+		<li><%= van.name  %></li>
+	<% end %>
+</ol>
