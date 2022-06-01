@@ -1,22 +1,41 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-      <h2><%= @van.name %></h2>
-      <p><%= @van.make_model_year %></p>
-      <p><%= "Kitchenette: " + @van.kitchenette.to_s %></p>
-      <p><%= "Toilet: " + @van.toilet.to_s %></p>
-      <p><%= "Solar power: " + @van.solar_power.to_s %></p>
-      <p><%= "Price ($): " + @van.price.to_s %></p>
-      <p><%= @van.overview %></p>
-      <div class="bottom">
-        <%= link_to "Request to book", "#", class: "btn btn-flat" %>
-        <%= link_to "Return to listings", vans_path, class: "btn btn-ghost" %>
-        <%= link_to "Add to bookmarks", "#", class: "btn btn-ghost" %>
+      <div>
+        <h1><strong><%= @van.name %></strong></h1>
+        <h2><%= @van.make_model_year %></h2>
+
+        <div class="container-field">
+          <p><strong><%= "Kitchenette:" %></strong><%= " Yes" %></p>
+        </div>
+
+        <div class="container-field">
+          <p><strong><%= "Toilet:" %></strong><%= " No" %></p>
+        </div>
+
+         <div class="container-field">
+          <p><strong><%= "Solar power:" %></strong><%= " Yes" %></p>
+        </div>
+
+         <div class="container-field">
+          <p><strong><%= "Price ($): "%></strong><%= " 25" %></p>
+        </div>
+
+         <div class="container-field">
+            <p><strong><%= @van.overview%></strong><strong><%=" that will make you finally live your dreams as a hippy in the modern era. To make you feel even closer to nature this van comes with its toilet already removed. This will save you from the dilemma of using an uneccessary appliance that kills the environment."%></strong></p>
+        </div>
+
+        <div class="buttons-bottom">
+          <%= link_to "Request to book", "#", class: "btn btn-flat" %>
+          <%= link_to "Return to listings", vans_path, class: "btn btn-ghost" %>
+          <%= link_to "Add to bookmarks", "#", class: "btn btn-ghost" %>
+        </div>
       </div>
     </div>
 
     <div class="col-lg-6">
       <div class="row">
+
         <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
         <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/1616259/pexels-photo-1616259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
         <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/1616262/pexels-photo-1616262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
