@@ -1,28 +1,35 @@
-<h1>Create your van</h1>
+<div class="container">
+  <h1>Create a new van listing</h1>
+  <div class="row">
+    <div class="col-lg-6">
 
-<%= simple_form_for(@van) do |f| %>
-  <%= f.input :name, :label => "Van name:" %>
-  <%= f.input :overview, :label => "Provide a brief description of your can:" %>
-  <%= f.input :make_model_year, :label => "Provide the brand, model and year of your can (format: brand_model_year):" %>
-  <%#= f.input collection_radio_buttons :options, [[true, 'Yes'] ,[false, 'No']], :first, :last, :label => "Does the van have a kitchenette?" %>
-  <%= f.input :kitchenette, as: :radio_buttons, :label => "Does the van have a kitchenette?" %>
-  <%= f.input :toilet, as: :radio_buttons, :label => "Does the van have a toilet?" %>
-  <%= f.input :solar_power, as: :radio_buttons, :label => "Does the van run on solar power?" %>
-  <%= f.input :price, :label => "Price per day ($)" %>
+      <%= simple_form_for(@van) do |f| %>
+        <%= f.input :name, :label => "Van name:" %>
+        <%= f.input :overview, :label => "Description:" %>
+        <%= f.input :make_model_year, :label => "Brand, model and year:" %>
+        <%= f.input :kitchenette, as: :radio_buttons, :label => "Kitchenette:" %>
+        <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
+        <%= f.input :solar_power, as: :radio_buttons, :label => "Solar power:" %>
+        <%= f.input :price, :label => "Price per day ($):" %>
 
-  <%= f.submit %>
-<% end %>
+        <%= f.submit "Create van listing", class: "btn btn-flat" %>
+        <action>
 
-  <%# belongs_to :user
-  has_many :bookings, dependent: :destroy
+        <%# <%= link_to "Request to book", "#", class: "btn btn-flat" %>
+        <%#= link_to "Add to bookmarks", "#", class: "btn btn-ghost" %>
 
-  validates :name, presence: true
-  validates :overview, presence: true
-  validates :overview, length: { maximum: 500 }
-  validates :make_model_year, presence: true
-  validates :kitchenette, inclusion: { in: [true, false] }
-  validates :toilet, inclusion: { in: [true, false] }
-  validates :solar_power, inclusion: { in: [true, false] }
-  validates :price, numericality: true %>
+      <% end %>
+    </div>
+    <div class="col-lg-6">
+      <div class="row">
+        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
+        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/1616259/pexels-photo-1616259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
+        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/1616262/pexels-photo-1616262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
+        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3651840/pexels-photo-3651840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div>
+        <div class="col-lg-6"><%= link_to "Upload picture", vans_path, class: "btn btn-ghost" %></div>
+        <div class="col-lg-6"></div>
+      </div>
+    </div>
 
-  <%# # , :label => "Does your van has the kitchenette?" %>
+  </div>
+</div>
