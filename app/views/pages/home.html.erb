@@ -1,11 +1,11 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3796556/pexels-photo-3796556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://imgs.search.brave.com/QYH7u6B3B3Ylk7WfaxxVTWwfz7ydR4F1CEDE8S7zewU/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tb3Zp/bmdyb292aW4uZGUv/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDgvMjAxNzA1MjYt/U3Bhbmllbi1GaXN0/ZXJyYS0wNzM2LU1h/bmR5LVJhYXNjaC5q/cGc);">
   <div class="container">
     <h1>Vans begging you to disappear!</h1>
     <p><strong>Rent a van, poop in a bucket</strong></p>
     <div class="search-container">
       <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
-        <div class="d-flex align-items-end">
+        <div class="d-flex align-items-end space-evenly">
           <div class="p-2 bd-highlight">
           <%= f.input :location, required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
           </div>

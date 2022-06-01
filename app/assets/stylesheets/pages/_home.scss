@@ -1,9 +1,9 @@
 // Specific CSS for your home-page
 .search-container {
-  background-color: #E9E5D6;
+  background-color: white;
   border-radius: 32px;
   padding: 12px;
-  width: 60%;
+  width: 96%;
   opacity: 96%;
 }
 
@@ -14,4 +14,12 @@
 
 .add-border-radius {
   border-radius: 12px;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.p-2 {
+  flex-grow: 1;
 }
