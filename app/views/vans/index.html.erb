@@ -2,6 +2,6 @@
 
 <ol>
 	<% @vans.each do |van| %>
-		<li><%= van.name  %></li>
+		<li><%= link_to van.name, van_path(van) %></li>
 	<% end %>
 </ol>
