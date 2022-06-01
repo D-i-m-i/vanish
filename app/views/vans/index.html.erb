@@ -1,9 +1,19 @@
 <div class="container">
-<h1>This is the Vans index page</h1>
-<ol>
-	<% @vans.each do |van| %>
-		<li><%= link_to van.name, van_path(van) %></li>
-	<% end %>
-</ol>
-<%= link_to "dashboard", dashboard_path %>
+<h1>Available Vans</h1>
+<div class="cards">
+<% @vans.each do |van| %>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+      <h2><%= van.name %></h2>
+      <p><%= van.make_model_year %></p>
+      <p><%= van.overview %></p>
+      </div>
+      <p><strong>$<%= van.price %> / day</strong></p>
+    </div>
+  </div>
+  <% end %>
+</div>
 </div>
