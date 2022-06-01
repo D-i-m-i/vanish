@@ -1,0 +1,28 @@
+<h1>Create your van</h1>
+
+<%= simple_form_for(@van) do |f| %>
+  <%= f.input :name, :label => "Van name:" %>
+  <%= f.input :overview, :label => "Provide a brief description of your can:" %>
+  <%= f.input :make_model_year, :label => "Provide the brand, model and year of your can (format: brand_model_year):" %>
+  <%#= f.input collection_radio_buttons :options, [[true, 'Yes'] ,[false, 'No']], :first, :last, :label => "Does the van have a kitchenette?" %>
+  <%= f.input :kitchenette, as: :radio_buttons, :label => "Does the van have a kitchenette?" %>
+  <%= f.input :toilet, as: :radio_buttons, :label => "Does the van have a toilet?" %>
+  <%= f.input :solar_power, as: :radio_buttons, :label => "Does the van run on solar power?" %>
+  <%= f.input :price, :label => "Price per day ($)" %>
+
+  <%= f.submit %>
+<% end %>
+
+  <%# belongs_to :user
+  has_many :bookings, dependent: :destroy
+
+  validates :name, presence: true
+  validates :overview, presence: true
+  validates :overview, length: { maximum: 500 }
+  validates :make_model_year, presence: true
+  validates :kitchenette, inclusion: { in: [true, false] }
+  validates :toilet, inclusion: { in: [true, false] }
+  validates :solar_power, inclusion: { in: [true, false] }
+  validates :price, numericality: true %>
+
+  <%# # , :label => "Does your van has the kitchenette?" %>

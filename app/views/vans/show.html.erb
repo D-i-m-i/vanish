@@ -1,0 +1,21 @@
+<h2><%= "Vehicle name: " + @van.name %></h2>
+<p><%= "Overview: " + @van.overview %></p>
+<p><%= "Brand, model and year: " + @van.make_model_year %></p>
+<p><%= "Kitchenette: " + @van.kitchenette.to_s %></p>
+<p><%= "Toilet: " + @van.toilet.to_s %></p>
+<p><%= "Solar power: " + @van.solar_power.to_s %></p>
+<p><%= "Price ($): " + @van.price.to_s %></p>
+
+<%# class Van < ApplicationRecord
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
+
+  validates :name, presence: true
+  validates :overview, presence: true
+  validates :overview, length: { maximum: 500 }
+  validates :make_model_year, presence: true
+  validates :kitchenette, inclusion: { in: [true, false] }
+  validates :toilet, inclusion: { in: [true, false] }
+  validates :solar_power, inclusion: { in: [true, false] }
+  validates :price, numericality: true
+end %>
