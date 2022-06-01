@@ -1,10 +1,29 @@
 <div class="container">
-<h1>Available Vans</h1>
+<%# search container %>
+    <div class="search-container">
+      <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
+        <div class="d-flex align-items-end space-evenly">
+          <div class="p-2 bd-highlight">
+          <%= f.input :location, required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.input :depart, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.input :return, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.submit "search",class: 'btn btn-flat w-100'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<%# search container %>
 <div class="cards">
 <% @vans.each do |van| %>
 <%= link_to van_path(van), class: "text-decoration-none text-black" do %>
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <img src="https://imgs.search.brave.com/ortOLs67WtUYKbTLeloQKYWu_3LNAlgVEUOJGtX5Mlk/rs:fit:960:540:1/g:ce/aHR0cHM6Ly93d3cu/dmFubGlmZWFkdmVu/dHVyZS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDYv/dmFubGlmZV93aXRo/X3BldHMtOTYweDU0/MC5qcGc" />
     <div class="card-trip-infos">
       <div>
       <h2><%= van.name%></h2>
@@ -17,9 +36,4 @@
   <% end %>
   <% end %>
 </div>
-</div>
-<div class="footer">
-  <div class="footer-links">
-    <p>© Vanish 2022</p>
-  </div>
 </div>
