@@ -6,6 +6,8 @@
 <p><%= "Solar power: " + @van.solar_power.to_s %></p>
 <p><%= "Price ($): " + @van.price.to_s %></p>
 
+<%= link_to "Return to listings", vans_path %>
+
 <%# class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
