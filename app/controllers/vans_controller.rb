@@ -16,7 +16,7 @@ class VansController < ApplicationController
   def create
     @van = Van.new(van_params)
     if @van.save
-    # Will raise ActiveModel::ForbiddenAttributesError
+         # Will raise ActiveModel::ForbiddenAttributesError
     flash[:alert] = "Van created successfully"
     redirect_to van_path(@van)
     else
@@ -28,6 +28,6 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:name, :overview, :make_model_year, :kitchenette, :toilet, :solar_power, :price)
+    params.require(:van).permit(:user_id, :name, :overview, :make_model_year, :kitchenette, :toilet, :solar_power, :price)
   end
 end
