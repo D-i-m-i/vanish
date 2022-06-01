@@ -1,15 +1,23 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3796556/pexels-photo-3796556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
   <div class="container">
-    <h1>Vans beggin you to disappear!</h1>
-    <p>Rent a van, poop in a bucket</p>
+    <h1>Vans begging you to disappear!</h1>
+    <p><strong>Rent a van, poop in a bucket</strong></p>
     <div class="search-container">
-      <%= simple_form_for :van, url: :vans do |f| %>
-        <div class="d-flex">
-        <%= f.input :location %>
-        <%= f.input :depart, as: :date, html5: true %>
-        <%= f.input :return, as: :date, html5: true %>
-        <%= f.submit "search", class: 'btn btn-primary'  %>
+      <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
+        <div class="d-flex align-items-end">
+          <div class="p-2 bd-highlight">
+          <%= f.input :location, required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.input :depart, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.input :return, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight">
+            <%= f.submit "search",class: 'btn btn-flat' %>
+          </div>
         </div>
       <% end %>
     </div>
