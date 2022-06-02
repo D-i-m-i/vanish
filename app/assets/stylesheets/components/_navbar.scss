@@ -11,3 +11,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 150px;
 }
+
+.navbar-lewagon .navbar-search {
+  width: 60%;
+  height: 10%;
+}
+
+.navbar-lewagon .search-icon {
+  background-color: $primary;
+  border-radius: 50%;
+  padding: 15%;
+  border: none;
+  img {
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+  }
+}
