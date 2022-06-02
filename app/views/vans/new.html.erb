@@ -11,9 +11,9 @@
         <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
         <%= f.input :solar_power, as: :radio_buttons, :label => "Solar power:" %>
         <%= f.input :price, :label => "Price per day ($):" %>
+        <%= f.input :photo, as: :file, :label => "Picture:" %>
 
         <%= f.submit "Create van listing", class: "btn btn-flat" %>
-        <action>
 
         <%# <%= link_to "Request to book", "#", class: "btn btn-flat" %>
         <%#= link_to "Add to bookmarks", "#", class: "btn btn-ghost" %>
@@ -22,12 +22,10 @@
     </div>
     <div class="col-lg-6">
       <div class="row">
-        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail mb-4", width:300, height:300 %></div>
-        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail mb-4", width:300, height:300 %></div>
-        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail mb-4", width:300, height:300 %></div>
-        <div class="col-lg-6"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail mb-4", width:300, height:300 %></div>
-        <div class="col-lg-6"><%= link_to "Upload picture", vans_path, class: "btn btn-ghost" %></div>
-        <div class="col-lg-6"></div>
+        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
+        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
+        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
+        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
       </div>
     </div>
 
