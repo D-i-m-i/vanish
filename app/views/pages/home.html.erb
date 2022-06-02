@@ -6,7 +6,7 @@
       <span data-controller="typed-js"></span>
     </p>
     <div class="search-container">
-      <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
+      <%= simple_form_for :query, url: vans_path, method: :get do |f| %>
         <div class="d-flex align-items-end space-evenly">
           <div class="p-2 bd-highlight flex-2">
           <%= f.input :location, placeholder: "Van name, van model, etc.", label: "Search", required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>

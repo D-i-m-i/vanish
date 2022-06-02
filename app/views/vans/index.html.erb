@@ -1,18 +1,18 @@
 <div class="container">
-<div class="cards">
-<% @vans.each do |van| %>
-<%= link_to van_path(van), class: "text-decoration-none text-black", target: :_blank do %>
-  <div class="card-trip">
-    <img src=<%= @index_photos.sample %>/>
-    <div class="card-trip-infos">
-      <div>
-      <h2><%= van.name%></h2>
-      <p><%= van.make_model_year %></p>
+  <div class="cards">
+  <% @vans.each do |van| %>
+  <%= link_to van_path(van), class: "text-decoration-none text-black", target: :_blank do %>
+    <div class="card-trip">
+      <img src=<%= @index_photos.sample %>/>
+      <div class="card-trip-infos">
+        <div>
+        <h2><%= van.name%></h2>
+        <p><%= van.make_model_year %></p>
+        </div>
+        <h2><strong>$<%= van.price %></strong> /day</p></h2>
       </div>
-      <h2><strong>$<%= van.price %></strong> /day</p></h2>
     </div>
+    <% end %>
+    <% end %>
   </div>
-  <% end %>
-  <% end %>
-</div>
 </div>
