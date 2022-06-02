@@ -14,20 +14,14 @@
         <%= f.input :photo, as: :file, :label => "Picture:" %>
 
         <%= f.submit "Create van listing", class: "btn btn-flat" %>
-
-        <%# <%= link_to "Request to book", "#", class: "btn btn-flat" %>
-        <%#= link_to "Add to bookmarks", "#", class: "btn btn-ghost" %>
-
       <% end %>
     </div>
     <div class="col-lg-6">
       <div class="row">
-        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
-        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
-        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
-        <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 350, crop: :fill) %></div>
-      </div>
+        <div class="col-lg-5 m-3 rounded-img"><%= image_tag "van_life", width: 700, class: "rounded-5" %></div>
     </div>
 
   </div>
 </div>
+
+ <%# <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("qfy5coc75cmnvgqktxyh", width: 270, crop: :fill, :radius => 20) %>
