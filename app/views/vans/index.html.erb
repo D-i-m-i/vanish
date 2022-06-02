@@ -1,24 +1,6 @@
 <div class="container">
-<%# search container %>
-  <div class="search-container">
-    <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
-      <div class="d-flex align-items-end space-evenly">
-        <div class="p-2 bd-highlight flex-2">
-        <%= f.input :location, required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
-        </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.input :depart, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
-        </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.input :return, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
-        </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.submit "search",class: 'btn btn-flat w-100'%>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<%# search container %>
+<br>
+<h3>Recommended Vans:</h3>
 <div class="cards">
 <% @vans.each do |van| %>
 <%= link_to van_path(van), class: "text-decoration-none text-black" do %>

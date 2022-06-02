@@ -3,7 +3,27 @@
     <%= link_to root_path , class: "navbar-brand" do %>
       <%= image_tag "vanish_logo.png", alt: "Vanish" %>
     <% end %>
-
+  <%# search container %>
+    <div class="search-container navbar-search">
+      <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
+        <div class="d-flex align-items-end space-evenly">
+          <div class="p-2 bd-highlight flex-2">
+          <%= f.input :location, placeholder: "where", label: false, required: false, input_html: { class: "add-border-radius", style: "w-50"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+            <%= f.input :depart, label: false, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+            <%= f.input :return, label: false, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+          <%# add search_icon.png as placeholder %>
+            <%= f.submit "?", placeholder: "temp", class: 'btn btn-flat w-70'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <%# search container %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
