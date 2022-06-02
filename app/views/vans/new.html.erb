@@ -6,6 +6,7 @@
       <%= simple_form_for(@van) do |f| %>
         <%= f.input :name, :label => "Van name:" %>
         <%= f.input :overview, :label => "Description:" %>
+        <%= f.input :address, :label => "Pickup Address" %>
         <%= f.input :make_model_year, :label => "Brand, model and year:" %>
         <%= f.input :kitchenette, as: :radio_buttons, :label => "Kitchenette:" %>
         <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
