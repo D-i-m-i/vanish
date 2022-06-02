@@ -7,7 +7,7 @@ class Van < ApplicationRecord
   pg_search_scope :global_search,
   against: [ :make_model_year, :name, :overview, :address ],
   associated_against: {
-    user: [ :name ]
+    user: [:name]
   },
   using: {
     tsearch: { prefix: true }
