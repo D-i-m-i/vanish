@@ -37,6 +37,9 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
           <li class="nav-item">
+            <%= link_to "All Vans", vans_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Host a Van", new_van_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
