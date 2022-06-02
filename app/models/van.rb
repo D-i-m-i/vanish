@@ -15,7 +15,7 @@ class Van < ApplicationRecord
 
   validates :name, presence: true
   validates :overview, presence: true
-  validates :overview, length: { maximum: 500 }
+  validates :overview, presence: true
   validates :make_model_year, presence: true
   validates :kitchenette, inclusion: { in: [true, false] }
   validates :toilet, inclusion: { in: [true, false] }
