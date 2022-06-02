@@ -10,6 +10,12 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    @marker = @van.geocoded.map do |van|
+      {
+        lat: van.latitude,
+        lng: van.longitude
+      }
+    end
   end
 
   def new
