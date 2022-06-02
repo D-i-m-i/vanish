@@ -5,7 +5,6 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  margin-left: 40px;
   border-radius: 24px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -17,14 +16,14 @@
   width: 220px;
 }
 
-.card-product h2 {
-  font-size: 16px;
+.card-product h3 {
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
-  font-size: 12px;
+.card-product h4 {
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -36,7 +35,12 @@
   margin-left: 16px;
 }
 
-
 .space-top {
-  margin-top: 18px;
+  margin-top: 24px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
