@@ -10,7 +10,7 @@
       <%= simple_form_for :query, url: vans_path, method: :get do |f| %>
         <div class="d-flex align-items-center space-evenly">
           <div class="p-2 bd-highlight flex-2">
-          <%= f.input :search, placeholder: "Search", label: false, required: false, input_html: { value: params[:van].try(:[], :location), class: "add-border-radius", style: "w-50"} ,wrapper_html: { class: "no-margin" } %>
+          <%= f.input :location, placeholder: "Search", label: false, required: false, input_html: { value: @params_query, class: "add-border-radius", style: "w-50"} ,wrapper_html: { class: "no-margin" } %>
           </div>
           <div class="p-2 bd-highlight flex-2">
             <%= f.input :depart, label: false, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>

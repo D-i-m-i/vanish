@@ -5,13 +5,13 @@ class Van < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :make_model_year, :name, :overview, :address ],
-    associated_against: {
-      user: [ :name ]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+  against: [ :make_model_year, :name, :overview, :address ],
+  associated_against: {
+    user: [ :name ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
 
   validates :name, presence: true
   validates :overview, presence: true
