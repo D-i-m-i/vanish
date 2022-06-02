@@ -4,9 +4,9 @@
     <div class="col-lg-6 mb-3">
 
       <%= simple_form_for(@van) do |f| %>
-        <%= f.input :name, :label => "Van name:" %>
-        <%= f.input :overview, :label => "Description:" %>
-        <%= f.input :make_model_year, :label => "Brand, model and year:" %>
+        <%= f.input :name, :label => "Van name:", required: false %>
+        <%= f.input :overview, :label => "Description:", required: false %>
+        <%= f.input :make_model_year, :label => "Brand, model and year:", required: false %>
         <%= f.input :kitchenette, as: :radio_buttons, :label => "Kitchenette:" %>
         <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
         <%= f.input :solar_power, as: :radio_buttons, :label => "Solar power:" %>
