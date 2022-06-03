@@ -6,7 +6,7 @@
     <% @pending_trips.each do |booking|  %>
       <div class="col">
         <div class="card-product">
-          <%= cl_image_tag booking.van.photos.first.key crop: :fill %>
+          <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
             <h4><%= booking.van.make_model_year %></h4>
