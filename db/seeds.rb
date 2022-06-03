@@ -3,7 +3,6 @@ Van.destroy_all
 User.destroy_all
 Booking.destroy_all
 
-
 user1 = User.create!(email: "email1@email.com", password: "123456", reset_password_token: "reset token test 1", name: "Josh Howard", bio: "Am I supposed to write something here?")
 
 user2 = User.create!(email: "email2@email.com", password: "123456", reset_password_token: "reset token test 2", name: "Melissa Ugas", bio: "I like turtles.")
