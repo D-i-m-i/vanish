@@ -47,7 +47,7 @@
     <div class="col-lg-6">
       <div class="row">
         <% @van.photos.each do |photo| %>
-        <div class="col-lg-5 m-4 rounded-img"><%= cl_image_tag photo.key, width: 700, crop: :fill, class: "rounded-5" %></div>
+        <div class="col-lg-5 m-4 rounded-img"><%= cl_image_tag photo.key, width: 600, crop: :fill, class: "rounded-5" %></div>
         <% end %>
       </div>
     </div>
