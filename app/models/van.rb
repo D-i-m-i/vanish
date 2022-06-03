@@ -13,6 +13,7 @@ class Van < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  validates :address, presence: true
   validates :name, presence: true
   validates :overview, presence: true
   validates :overview, presence: true
@@ -21,4 +22,7 @@ class Van < ApplicationRecord
   validates :toilet, inclusion: { in: [true, false] }
   validates :solar_power, inclusion: { in: [true, false] }
   validates :price, numericality: true
+  validates :address, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
