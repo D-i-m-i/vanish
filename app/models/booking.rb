@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :van
+  has_one :host, through: :user, source: :van
 
   validates :total_price, numericality: true
   validate :end_after_start
