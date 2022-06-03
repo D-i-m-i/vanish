@@ -11,7 +11,7 @@
           <div class="container-field">
             <div class="row">
               <div class="col-lg-6">
-                <h2><%= @van.address %></h2>
+                <p><%= @van.address %></p>
               </div>
               <div class="col-lg-6 text-end">
                 <p>Add to bookmarks ❤</p> <br>
@@ -22,11 +22,11 @@
           <p class="mb-5"><strong><%= "Model: " %></strong><%= @van.make_model_year %></p>
           <p><strong><%= "Description: " %></strong><br><%= @van.overview %></p> <br>
         </div>
-        <div class="row">
+        <div class="row" style="padding-right: 0px !important;">
           <div class="col-lg-6">
             <p><strong><%= "Toilet:" %></strong><%= " No" %></p>
           </div>
-          <div class="col-lg-6 text-end">
+          <div class="col-lg-6 text-end"  style="padding-right: 0px !important;">
             <p><strong><%= "Solar power:" %></strong><%= " Yes" %></p>
           </div>
           <div class="col-lg-6">
@@ -41,12 +41,10 @@
     </div>
     <div class="col-lg-6">
       <div class="row">
-        <div class="col-lg-5 m-3 rounded-img mr-5"><%= image_tag "van_life", width: 600, class: "rounded-5" %></div>
-        <%# <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("van_life", width: 600, crop: :fill, :radius => 20) %>
-        </div>
+        <% @van.photos.each do |photo| %>
+        <div class="col-lg-5 m-4 rounded-img"><%= cl_image_tag photo.key, width: 700, crop: :fill, class: "rounded-5" %></div>
+        <% end %>
       </div>
     </div>
 </div>
-
-<%# <div class="col-lg-12"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %>
 </div>

@@ -12,7 +12,7 @@
         <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
         <%= f.input :solar_power, as: :radio_buttons, :label => "Solar power:" %>
         <%= f.input :price, :label => "Price per day ($):" %>
-        <%= f.input :photo, as: :file, :label => "Picture:" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, :label => "Picture:" %>
 
         <%= f.submit "Create van listing", class: "btn btn-flat" %>
       <% end %>
