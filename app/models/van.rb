@@ -7,18 +7,22 @@ class Van < ApplicationRecord
   pg_search_scope :global_search,
   against: [ :make_model_year, :name, :overview, :address ],
   associated_against: {
-    user: [ :name ]
+    user: [:name]
   },
   using: {
     tsearch: { prefix: true }
   }
 
+  validates :address, presence: true
   validates :name, presence: true
   validates :overview, presence: true
-  validates :overview, length: { maximum: 500 }
+  validates :overview, presence: true
   validates :make_model_year, presence: true
   validates :kitchenette, inclusion: { in: [true, false] }
   validates :toilet, inclusion: { in: [true, false] }
   validates :solar_power, inclusion: { in: [true, false] }
   validates :price, numericality: true
+  validates :address, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

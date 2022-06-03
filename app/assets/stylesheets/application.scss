@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl";
 
 // Your CSS partials
 @import "components/index";
@@ -20,4 +21,8 @@
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+
+.content-container {
+  background-color: white;
 }

@@ -1,12 +1,12 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="row container-field">
     <div class="col-lg-6">
       <div class="row">
         <div class="col-lg-6">
           <h1><strong><%= @van.name %></strong></h1>
         </div>
-        <div class="col-lg-6 text-end">
-          <h1><strong><%= @van.user.name %></strong></h1>
+        <div class="col-lg-6 mt-3 text-end">
+          <p>hosted by: <%= @van.user.name %></h3>
         </div>
           <div class="container-field">
             <div class="row">
@@ -14,13 +14,13 @@
                 <h2><%= @van.address %></h2>
               </div>
               <div class="col-lg-6 text-end">
-                <h3>Add to bookmarks ❤</h3>
+                <p>Add to bookmarks ❤</p> <br>
               </div>
             </div>
           </div>
         <div class="container-field mt-2">
           <p class="mb-5"><strong><%= "Model: " %></strong><%= @van.make_model_year %></p>
-          <p><strong><%= "Description: " %></strong><br><%= @van.overview %></p>
+          <p><strong><%= "Description: " %></strong><br><%= @van.overview %></p> <br>
         </div>
         <div class="row">
           <div class="col-lg-6">
@@ -33,7 +33,7 @@
             <p><strong><%= "Kitchenette:" %></strong><%= " Yes" %></p>
           </div>
          <div class="container-field">
-          <p><strong><%= "Price ($): "%></strong><%= " 25" %></p>
+          <h5><strong>$<%= @van.price %></strong> /day</h5> <br>
          </div>
           <%= link_to "Request to book", "#", class: "btn btn-flat mb-3" %>
          </div>
@@ -41,11 +41,16 @@
     </div>
     <div class="col-lg-6">
       <div class="row">
-        <div class="col-lg-5 m-3 rounded-img mr-5"><%= image_tag "van_life", width: 600, class: "rounded-5" %></div>
+        <div class="col-lg-5 m-3 rounded-img mr-5"><%= image_tag "van_life.jpg", width: 600, class: "rounded-5" %></div>
         <%# <div class="col-lg-5 m-3 rounded"><%= cl_image_tag("van_life", width: 600, crop: :fill, :radius => 20) %>
         </div>
       </div>
     </div>
+  <h1>Pickup location</h1>
+  <div style="width: 100%; height: 600px; border-radius: 12px; margin-bottom: 12px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
-
-<%# <div class="col-lg-12"><%= image_tag "https://images.pexels.com/photos/3004666/pexels-photo-3004666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", class:"img-thumbnail", width:300, height:300 %></div> %>
+</div>
