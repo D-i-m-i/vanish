@@ -1,7 +1,7 @@
 <div class="container mt-4">
-  <div class="row container-field">
+  <div class="row">
     <div class="col-lg-6">
-      <div class="row">
+      <div class="row container-field">
         <div class="col-lg-6">
           <h1><strong><%= @van.name %></strong></h1>
         </div>
@@ -39,8 +39,7 @@
                 <%= f.input :start_date, as: :date, html5: true, required: false %>
                 <%= f.input :end_date, as: :date, html5: true, required: false %>
                 <%= f.button :submit, class: "btn btn-flat mb-3" %>
-              <% end #%>
-          <%#= link_to "Request to book", "#", class: "btn btn-flat mb-3" %>
+              <% end %>
          </div>
       </div>
     </div>
@@ -51,11 +50,11 @@
         <% end %>
       </div>
     </div>
-  <h1>Pickup location</h1>
-  <div style="width: 100%; height: 600px; border-radius: 12px; margin-bottom: 12px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <h1>Pickup location</h1>
+    <div style="width: 100%; height: 600px; border-radius: 12px; margin-bottom: 12px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-</div>
 </div>
