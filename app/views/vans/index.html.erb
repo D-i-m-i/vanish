@@ -1,38 +1,18 @@
 <div class="container">
-<%# search container %>
-  <div class="search-container">
-    <%= simple_form_for :van, url: vans_path, method: :get do |f| %>
-      <div class="d-flex align-items-end space-evenly">
-        <div class="p-2 bd-highlight flex-2">
-        <%= f.input :location, required: false, input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+  <div class="cards">
+  <% @vans.each do |van| %>
+  <%= link_to van_path(van), class: "text-decoration-none text-black", target: :_blank do %>
+    <div class="card-trip">
+      <img src=<%= @index_photos.sample %>/>
+      <div class="card-trip-infos">
+        <div>
+        <h2><%= van.name%></h2>
+        <p><%= van.make_model_year %></p>
         </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.input :depart, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
-        </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.input :return, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
-        </div>
-        <div class="p-2 bd-highlight flex-2">
-          <%= f.submit "search",class: 'btn btn-flat w-100'%>
-        </div>
+        <h2><strong>$<%= van.price %></strong> /day</p></h2>
       </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
-<%# search container %>
-<div class="cards">
-<% @vans.each do |van| %>
-<%= link_to van_path(van), class: "text-decoration-none text-black" do %>
-  <div class="card-trip">
-    <img src=<%= @index_photos.sample %>/>
-    <div class="card-trip-infos">
-      <div>
-      <h2><%= van.name%></h2>
-      <p><%= van.make_model_year %></p>
-      </div>
-      <h2><strong>$<%= van.price %></strong> /day</p></h2>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
-</div>
 </div>

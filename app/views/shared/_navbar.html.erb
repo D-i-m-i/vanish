@@ -1,9 +1,33 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <div class="container-fluid">
     <%= link_to root_path , class: "navbar-brand" do %>
       <%= image_tag "vanish_logo.png", alt: "Vanish" %>
     <% end %>
 
+  <% unless controller_name == "pages" %>
+    <div class="search-container navbar-search">
+      <%= simple_form_for :query, url: vans_path, method: :get do |f| %>
+        <div class="d-flex align-items-center space-evenly">
+          <div class="p-2 bd-highlight flex-2">
+          <%= f.input :location, placeholder: "Search", label: false, required: false, input_html: { value: @params_query, class: "add-border-radius", style: "w-50"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+            <%= f.input :depart, label: false, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+            <%= f.input :return, label: false, required: false, as: :date, html5: true , input_html: { class: "add-border-radius"} ,wrapper_html: { class: "no-margin" } %>
+          </div>
+          <div class="p-2 bd-highlight flex-2">
+          <%# add search_icon.png as placeholder %>
+            <%= button_tag type: "submit", class: "search-icon" do %>
+            <%= image_tag "search_icon.png" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,6 +36,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+          <li class="nav-item">
+            <%= link_to "All Vans", vans_path, class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Host a Van", new_van_path, class: "nav-link" %>
           </li>
