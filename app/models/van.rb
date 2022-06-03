@@ -13,6 +13,7 @@ class Van < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  validates :address, presence: true
   validates :name, presence: true
   validates :overview, presence: true
   validates :overview, presence: true
