@@ -7,14 +7,24 @@ class BookingsController < ApplicationController
   # van_id
   # user_id
   def create
-    @van_id = Van.find(params[:van_id])
-    @user_id = current_user
-    @total_price = van.price * 4
-    @booking = Booking.new(van_id: @van_id, user_id: @user_id, total_price: @total_price)
+    @van = Van.find(params[:van_id])
+    @user_id = current_user.id
+    @booking = Booking.new(booking_params)
+    @booking.van_id = @van.id
+    @booking.user_id = @user_id
+    @total_price = @van.price * (@booking.end_date.to_date - @booking.start_date.to_date).to_i
+    @booking.total_price = @total_price
+
     if @booking.save
       redirect_to dashboard_path
     else
       render 'vans/show'
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

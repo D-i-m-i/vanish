@@ -35,7 +35,12 @@
          <div class="container-field">
           <h5><strong>$<%= @van.price %></strong> /day</h5> <br>
          </div>
-          <%= link_to "Request to book", "#", class: "btn btn-flat mb-3" %>
+              <%= simple_form_for([ @van, @booking ]) do |f| %>
+                <%= f.input :start_date, as: :date, html5: true, required: false %>
+                <%= f.input :end_date, as: :date, html5: true, required: false %>
+                <%= f.button :submit, class: "btn btn-flat mb-3" %>
+              <% end #%>
+          <%#= link_to "Request to book", "#", class: "btn btn-flat mb-3" %>
          </div>
       </div>
     </div>
