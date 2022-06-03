@@ -3,7 +3,6 @@
   <% @vans.each do |van| %>
   <%= link_to van_path(van), class: "text-decoration-none text-black", target: :_blank do %>
     <div class="card-trip">
-      <%# <img src=<%= @index_photos.sample %>
       <%= cl_image_tag van.photos.first.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
