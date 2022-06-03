@@ -3,7 +3,7 @@
 <div class="card-container">
   <h3>Pending Trips</h3>
   <div class="cards-grid">
-    <% @your_trips.each do |booking|  %>
+    <% @pending_trips.each do |booking|  %>
       <div class="col">
         <div class="card-product">
           <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
@@ -21,7 +21,7 @@
 <div class="card-container">
   <h3>Upcoming Trips</h3>
   <div class="cards-grid">
-    <% @your_trips.each do |booking|  %>
+    <% @upcoming_trips.each do |booking|  %>
       <div class="col">
         <div class="card-product">
           <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
