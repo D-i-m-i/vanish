@@ -25,7 +25,7 @@ econobus = Van.create!(name: "Who's Out There?", overview: "Schools out for summ
 file = File.open(Rails.root.join("app/assets/images/econobus.jpg"))
 econobus.photos.attach(io: file, filename: 'econobus.jpg', content_type: 'image/jpg')
 
-econoline = Van.create!(name: "Die Hard", overview: "Awesome lifted class Van. Great for really getting out there. Don't be a chicken and go tackle some dirt roads.. you'll pass tipped over Sprinter Vans and Volkswagen's with blown engines and you'll be screaming Yippie Kay Yay Mother Cluckers!", make_model_year: "Ford Econoline E350 2000", address: "852 Gainsway Road San Bernardino, CA 92404", kitchenette: false, toilet: false, solar_power: true, price: 185, user: host1)
+econoline = Van.create!(name: "Die Hard", overview: "Don't be a chicken and go tackle some dirt roads.. you will zoom by the tipped over Sprinter Vans and stuck volkswagens while screaming 'Yippie Kay Yay Mother Cluckers'!", make_model_year: "Ford Econoline E350 2000", address: "852 Gainsway Road San Bernardino, CA 92404", kitchenette: false, toilet: false, solar_power: true, price: 185, user: host1)
 file = File.open(Rails.root.join("app/assets/images/econoline.jpg"))
 econoline.photos.attach(io: file, filename: 'econoline.jpg', content_type: 'image/jpg')
 
