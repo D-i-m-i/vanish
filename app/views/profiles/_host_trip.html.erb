@@ -1,32 +1,17 @@
-<h1><strong>Your Bookings</strong></h1>
+
+<h1 class="mt-4"><strong>Your Bookings</strong></h1>
 <div class="card-container">
   <h3>Pending Bookings</h3>
-  <% @your_trips.each do |booking|  %>
-    <div class="col">
-      <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"/>
-        <div class="card-product-infos">
-          <h3> <%= booking.van.name %></h3>
-          <h4><%= booking.van.make_model_year %></h4>
-          <a class="btn btn-gradient space-top btn-full-width" href="#">Accept</a>
-          <a class="btn btn-ghost space-top my-2 btn-full-width" href="#">Reject</a>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div class="card-container">
-  <h3>Upcoming Bookings</h3>
   <div class="cards-grid">
-    <% @your_trips.each do |booking|  %>
+    <% @pending_bookings.each do |booking|  %>
       <div class="col">
         <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"/>
+          <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
             <h4><%= booking.van.make_model_year %></h4>
-            <a class="btn btn-gradient space-top" href="#">Info</a>
+            <a class="btn btn-gradient space-top btn-full-width" href="#">Accept</a>
+            <a class="btn btn-ghost space-top my-2 btn-full-width" href="#">Reject</a>
           </div>
         </div>
       </div>
@@ -37,32 +22,15 @@
 <div class="card-container">
   <h3>Past Bookings</h3>
   <div class="cards-grid">
-    <% @your_trips.each do |booking|  %>
+    <% @past_bookings.each do |booking|  %>
       <div class="col">
         <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"/>
+          <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
             <h4><%= booking.van.make_model_year %></h4>
-            <a class="btn btn-gradient space-top" href="#">Info</a>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<div class="card-container">
-  <h3>Canceled Bookings</h3>
-  <div class="cards-grid">
-    <% @your_trips.each do |booking|  %>
-      <div class="col">
-        <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"/>
-          <div class="card-product-infos">
-            <h3> <%= booking.van.name %></h3>
-            <h4><%= booking.van.make_model_year %></h4>
-            <a class="btn btn-gradient space-top" href="#">Info</a>
+            <a class="btn btn-gradient space-top btn-full-width" href="#">Accept</a>
+            <a class="btn btn-ghost space-top my-2 btn-full-width" href="#">Reject</a>
           </div>
         </div>
       </div>

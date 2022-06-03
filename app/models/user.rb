@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :vans
+  has_many :your_bookings, through: :vans, source: :bookings
   has_one_attached :photo
 
   validates :name, presence: true
