@@ -12,14 +12,14 @@
         <%= f.input :toilet, as: :radio_buttons, :label => "Toilet:" %>
         <%= f.input :solar_power, as: :radio_buttons, :label => "Solar power:" %>
         <%= f.input :price, :label => "Price per day ($):" %>
-        <%= f.input :photo, as: :file, :label => "Picture:" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, :label => "Picture:" %>
 
         <%= f.submit "Create van listing", class: "btn btn-flat" %>
       <% end %>
     </div>
     <div class="col-lg-6">
       <div class="row">
-        <div class="col-lg-5 m-3 rounded-img mr-5"><%= image_tag "van_life", width: 600, class: "rounded-5" %></div>
+        <div class="col-lg-5 m-3 rounded-img mr-5"><%= image_tag "van_life.jpg", width: 600, class: "rounded-5" %></div>
     </div>
     </div>
   </div>
