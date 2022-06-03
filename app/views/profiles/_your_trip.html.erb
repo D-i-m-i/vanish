@@ -1,4 +1,23 @@
 <h1 class="mt-4"><strong>Your Trips</strong></h1>
+
+<div class="card-container">
+  <h3>Pending Trips</h3>
+  <div class="cards-grid">
+    <% @your_trips.each do |booking|  %>
+      <div class="col">
+        <div class="card-product">
+          <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
+          <div class="card-product-infos">
+            <h3> <%= booking.van.name %></h3>
+            <h4><%= booking.van.make_model_year %></h4>
+            <a class="btn btn-gradient space-top" href="#">Info</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="card-container">
   <h3>Upcoming Trips</h3>
   <div class="cards-grid">
@@ -8,7 +27,7 @@
           <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
-            <h4><%= booking.van.make_model_year %></h4>
+            <h4 class="d-inline-block text-truncate" style="max-width: 150px;"><%= booking.van.make_model_year %></h4>
             <a class="btn btn-gradient space-top" href="#">Info</a>
           </div>
         </div>

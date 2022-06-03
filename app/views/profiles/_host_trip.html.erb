@@ -9,7 +9,7 @@
           <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
-            <h4><%= booking.van.make_model_year %></h4>
+            <h4 class="d-inline-block text-truncate" style="max-width: 150px;"><%= booking.van.make_model_year %></h4>
             <a class="btn btn-gradient space-top btn-full-width" href="#">Accept</a>
             <a class="btn btn-ghost space-top my-2 btn-full-width" href="#">Reject</a>
           </div>
@@ -29,8 +29,7 @@
           <div class="card-product-infos">
             <h3> <%= booking.van.name %></h3>
             <h4><%= booking.van.make_model_year %></h4>
-            <a class="btn btn-gradient space-top btn-full-width" href="#">Accept</a>
-            <a class="btn btn-ghost space-top my-2 btn-full-width" href="#">Reject</a>
+            <a class="btn btn-gradient space-top" href="#">Info</a>
           </div>
         </div>
       </div>
